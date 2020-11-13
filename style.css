@@ -17,7 +17,7 @@ body{
     
 }
 
-/* Navbar ------------------------------------------*/
+/* -----------Navbar ------------------------------------------*/
 .menu-bars{
     z-index: 12;
     position: fixed;
@@ -76,7 +76,7 @@ nav{
     width: 100%;
     text-align: center;
     text-decoration: none;
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin: 1rem 0rem;
     color:var(--navColor);
 }
@@ -97,8 +97,4 @@ nav{
     transform: scale(1.1);
 }
 
-@media only screen and (max-width: 700px){
-    nav{
-        width: 100%;
-    }
-}
+
