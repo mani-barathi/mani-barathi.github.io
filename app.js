@@ -12,6 +12,7 @@ function animateIntroText(){
     let splitNameText = nameText.split("");
 
     greetingTextEl.style.opacity='1';
+    nameTextEl.style.opacity='1';
 
     nameTextEl.textContent = '';
     for(let i=0;i<splitNameText.length ;i++){

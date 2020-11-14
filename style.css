@@ -139,6 +139,7 @@ section{
     font-size: 5rem ;
     font-weight: 200;
     color: #34495E;
+    opacity: 0;                         /* chnaged on javascript */
 }
 
 @media only screen and (max-width:600px){
