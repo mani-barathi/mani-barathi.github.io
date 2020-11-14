@@ -1,7 +1,36 @@
+// Navbar and Hamburger Menu
 const menuBtn = document.querySelector('.menu-bars');
 const navContainer = document.querySelector('.nav-container');
 const navLinks = document.getElementsByClassName('nav-link');
 const menuBars = document.getElementsByClassName('bar');
+
+
+function animateIntroText(){
+    let greetingTextEl = document.querySelector('.greeting-text');
+    let nameTextEl = document.querySelector('.name-text');
+    let nameText = nameTextEl.textContent;
+    let splitNameText = nameText.split("");
+
+    greetingTextEl.style.opacity='1';
+
+    nameTextEl.textContent = '';
+    for(let i=0;i<splitNameText.length ;i++){
+        nameTextEl.innerHTML += "<span>" + splitNameText[i] +"</span>";
+    }
+
+    let count = 0;
+    let timer = setInterval(animateText,50);
+    function animateText(){
+        const span = nameTextEl.querySelectorAll('span')[count];
+        span.classList.add('fade');
+        count++;
+        if (count == splitNameText.length){
+            clearInterval(timer);
+            timer = null;
+            return
+        }
+    }
+}
 
 
 function toggleNavbar(event) {
@@ -24,3 +53,5 @@ menuBtn.addEventListener('click', toggleNavbar);
 [...navLinks].forEach(nav => {
     nav.addEventListener('click', toggleNavbar);
 });
+
+animateIntroText();
