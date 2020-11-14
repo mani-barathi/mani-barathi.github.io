@@ -20,8 +20,8 @@ function animateIntroText(){
     }
 
     let count = 0;
-    let timer = setInterval(animateText,50);
-    function animateText(){
+    let timer = setInterval(animateLetterByLetter,50);
+    function animateLetterByLetter(){
         const span = nameTextEl.querySelectorAll('span')[count];
         span.classList.add('fade');
         count++;
