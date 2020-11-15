@@ -3,7 +3,8 @@ const menuBtn = document.querySelector('.menu-bars');
 const navContainer = document.querySelector('.nav-container');
 const navLinks = document.getElementsByClassName('nav-link');
 const menuBars = document.getElementsByClassName('bar');
-
+// Projects
+const projectItems = document.querySelectorAll('.project-item');
 
 function animateIntroText(){
     let greetingTextEl = document.querySelector('.greeting-text');
@@ -47,6 +48,28 @@ function toggleNavbar(event) {
     });
 }
 
+
+// Intersection observer options 
+const appearOptions = {
+    threashold:1,
+    rootMargin:"0px 0px -100px 0px",
+};
+
+// Intersection observer to observe projects such that when they intersect the bottom boundary on the page, 
+// the styling of the project are updated
+const appearOnScroll = new IntersectionObserver((entries,appearOnScroll)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('project-item-active');
+            appearOnScroll.unobserve(entry.target);
+        }
+    });
+},appearOptions);
+
+// telling intersection observer to observe the projects
+projectItems.forEach(project=>{
+    appearOnScroll.observe(project);
+});
 
 
 // EventListeners

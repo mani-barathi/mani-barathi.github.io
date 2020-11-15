@@ -170,8 +170,16 @@ section{
     margin: 25px;
     background: white;
     border-radius: 5px;
-    box-shadow: 2px 5px 30px 10px  rgba(0,0,0, 0.1)  ;
+    box-shadow: 2px 5px 30px 10px  rgba(0,0,0, 0.1);
+    transform: translateY(40%);
+    transition: transform 0.5s ease-in-out;
+    opacity: 0;
 }
+.project-item-active{
+    opacity: 1;
+    transform: translateY(0%);
+}
+
 .project-info{
     padding: 5px;
 }
@@ -211,6 +219,11 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* -------contact section---------------------- */
+.contact-container{
+    height: 100vh;
 }
 
 
