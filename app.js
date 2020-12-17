@@ -52,7 +52,7 @@ function toggleNavbar(event) {
 // Intersection observer options 
 const appearOptions = {
     threashold: 1,
-    rootMargin: "0px 0px -100px 0px",      // the bottom boundary is pushed 100px inwards to the screen
+    rootMargin: "0px 0px 50px 0px",      // the bottom boundary is pushed 100px outwards to the screen
 };
 
 // Intersection observer to observe projects such that when they intersect the bottom boundary on the page, 

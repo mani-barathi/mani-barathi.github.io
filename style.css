@@ -2,7 +2,6 @@
 html{ scroll-behavior: smooth; }
 body{
     width: 100%;
-    height: 100vh;
     background: whitesmoke;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -102,7 +101,6 @@ nav{
 
 section{
     width: 100%;
-    background: whitesmoke;
 }
 
 /*----------- Home Section------------------------------------- */
@@ -151,11 +149,11 @@ section{
 /*------- Project Section -----------------*/
 .project-section{
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5rem;
 }
 .project-container{
     width: 100%;
@@ -167,6 +165,8 @@ section{
 .project-item{
     width: 100%;
     max-width: 400px;
+    height: 100%;
+    max-height: 400px;
     margin: 25px;
     background: white;
     border-radius: 5px;
@@ -175,51 +175,78 @@ section{
     transition: transform 0.5s ease;
     opacity: 0;
     position: relative;
+    user-select: none;
 }
 .project-item-active{
     opacity: 1;
     transform: translateY(0%);
 }
 
-.project-info{
-    padding: 5px;
-    margin-bottom: 15px;
-}
-
 .project-thumbnail{
     width: 100%;
-    max-height: 200px;
+    height: 100%;
+    
     object-fit: cover;
-    border-radius:5px 5px 0px 0px;
+    border-radius: 5px;
 }
-.project-links{
+.project-link-new{
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    display: block;
+    margin: 0.5rem 0;
+    color: var(--barColor);
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: 2px solid var(--barColor);
+    transition: all 0.2s ease;
+}
+.project-info-text{
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--barColor);
+}
+ .project-link-new:hover{
+    text-decoration: none;
+    background: var(--barColor);
+    color: white;
+} 
+/* ------------------------ */
+.project-info-new{
+    width: 100%;
+    height:100%;
+    transition: opacity 0.3s ease-in-out;
     position: absolute;
-    bottom: 2px;
-    left: 2px;
-    margin-left: 2px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255,255,255,0.35);
+	backdrop-filter:blur(10px);
+	background-clip: padding-box;
+    border-radius: 5px;
+    padding: 1rem;
 }
-.project-link{
-    padding: 0px 3px;
-}
-.project-link:hover{
-    opacity: 0.8;
-    transform: scale(1.2);
+.project-item:hover .project-info-new {
+    opacity: 1;
 }
 
 
 /* ---------About section ---------------------*/
 .about-section{
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5rem;
 }
 .about-wrapper{
     width: 100%;
     max-width: 1100px;
-    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -256,16 +283,19 @@ section{
 }
 
 /* -------contact section---------------------- */
-
-.contact-section{
-    height: 100vh;
-    width: 100%;
-    padding-top: 5px ;
+#contact{
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
-    margin-top: 1rem;
+}
+.contact-section{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .form-container{
@@ -311,8 +341,7 @@ section{
         width: 210px;
         height: 210px;
         object-fit: cover;
-        margin: 10px 10px;
-        margin-bottom: 5rem;
+        margin: 0.6rem 0.6rem;
     }
     .form-container{
         box-shadow: none;
@@ -331,6 +360,15 @@ section{
     }
     .bar1, .bar2, .bar3{
         width: 1.5rem;
+    }
+
+    .project-link-new{
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+    .project-info-text{
+        font-weight: 500;
+        font-size: 1rem;
     }
 }
 
