@@ -319,6 +319,13 @@ section{
 }
 
 /* -----------Media queries---------------------------- */
+@media only screen and (max-width:750px){
+    .about-wrapper{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
 @media only screen and (max-width:600px){
     .nav-links-container > a{
         font-size: 2rem;
